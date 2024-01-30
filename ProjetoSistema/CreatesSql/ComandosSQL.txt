@@ -1,0 +1,13 @@
+﻿// COMANDOS SQL QUE SÃO USADOS NA CRIAÇÃO DO BANCO
+// CRIAÇÃO TABELA DE USUARIO
+
+CREATE TABLE CadUser (
+    ID INT IDENTITY(1,1) PRIMARY KEY,
+    Usuario VARCHAR(100),
+    Senha VARCHAR(100),
+    Ativo BIT
+);
+
+insert into CadUser (Usuario,Senha,Ativo) values ('ADMIN','1ADMIN23','1')
+
+//

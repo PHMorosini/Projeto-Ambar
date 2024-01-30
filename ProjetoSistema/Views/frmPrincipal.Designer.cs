@@ -151,7 +151,6 @@
             this.BackgroundImage = global::ProjetoSistema.Properties.Resources.BackgroundImage;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1424, 716);
-            this.ControlBox = false;
             this.Controls.Add(this.pnCad);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

@@ -1,4 +1,6 @@
-﻿namespace ProjetoSistema.Views
+﻿using System.Windows.Forms;
+
+namespace ProjetoSistema.Views
 {
     partial class frmCadPro
     {
@@ -35,12 +37,32 @@
             this.btnPesquisarProd = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.txtValorCusto = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtValorCompra = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtValorVenda = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.pnInf = new System.Windows.Forms.Panel();
+            this.btnExcluir = new System.Windows.Forms.Button();
+            this.btnGravar = new System.Windows.Forms.Button();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.pnInf.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -122,6 +144,15 @@
             this.panel3.Size = new System.Drawing.Size(450, 34);
             this.panel3.TabIndex = 3;
             // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.5F);
+            this.textBox1.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.textBox1.Location = new System.Drawing.Point(117, 0);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(294, 32);
+            this.textBox1.TabIndex = 4;
+            // 
             // button1
             // 
             this.button1.BackgroundImage = global::ProjetoSistema.Properties.Resources.ImagemPesquisa;
@@ -145,14 +176,183 @@
             this.label2.Text = "DESCRIÇÃO:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox1
+            // panel4
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.5F);
-            this.textBox1.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.textBox1.Location = new System.Drawing.Point(117, 0);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(294, 32);
-            this.textBox1.TabIndex = 4;
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(163)))), ((int)(((byte)(163)))));
+            this.panel4.Controls.Add(this.txtValorCusto);
+            this.panel4.Controls.Add(this.label6);
+            this.panel4.Controls.Add(this.txtValorCompra);
+            this.panel4.Controls.Add(this.label5);
+            this.panel4.Controls.Add(this.txtValorVenda);
+            this.panel4.Controls.Add(this.label4);
+            this.panel4.Location = new System.Drawing.Point(22, 95);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(281, 121);
+            this.panel4.TabIndex = 4;
+            // 
+            // txtValorCusto
+            // 
+            this.txtValorCusto.Location = new System.Drawing.Point(139, 75);
+            this.txtValorCusto.Name = "txtValorCusto";
+            this.txtValorCusto.Size = new System.Drawing.Size(132, 20);
+            this.txtValorCusto.TabIndex = 5;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(3, 78);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(134, 17);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "VALOR DE CUSTO:";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // txtValorCompra
+            // 
+            this.txtValorCompra.Location = new System.Drawing.Point(139, 45);
+            this.txtValorCompra.Name = "txtValorCompra";
+            this.txtValorCompra.Size = new System.Drawing.Size(132, 20);
+            this.txtValorCompra.TabIndex = 3;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(3, 46);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(145, 17);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "VALOR DE COMPRA:";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // txtValorVenda
+            // 
+            this.txtValorVenda.Location = new System.Drawing.Point(139, 12);
+            this.txtValorVenda.Name = "txtValorVenda";
+            this.txtValorVenda.Size = new System.Drawing.Size(132, 20);
+            this.txtValorVenda.TabIndex = 1;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(3, 15);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(133, 17);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "VALOR DE VENDA:";
+            // 
+            // pnInf
+            // 
+            this.pnInf.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.pnInf.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(206)))), ((int)(((byte)(206)))));
+            this.pnInf.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnInf.Controls.Add(this.btnExcluir);
+            this.pnInf.Controls.Add(this.btnGravar);
+            this.pnInf.Location = new System.Drawing.Point(-1, 466);
+            this.pnInf.Name = "pnInf";
+            this.pnInf.Size = new System.Drawing.Size(858, 32);
+            this.pnInf.TabIndex = 5;
+            // 
+            // btnExcluir
+            // 
+            this.btnExcluir.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExcluir.BackgroundImage = global::ProjetoSistema.Properties.Resources.btnExcluir;
+            this.btnExcluir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnExcluir.Location = new System.Drawing.Point(582, -2);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(121, 32);
+            this.btnExcluir.TabIndex = 1;
+            this.btnExcluir.UseVisualStyleBackColor = true;
+            // 
+            // btnGravar
+            // 
+            this.btnGravar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGravar.BackgroundImage = global::ProjetoSistema.Properties.Resources.btnSalvar;
+            this.btnGravar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnGravar.Location = new System.Drawing.Point(709, -2);
+            this.btnGravar.Name = "btnGravar";
+            this.btnGravar.Size = new System.Drawing.Size(121, 32);
+            this.btnGravar.TabIndex = 0;
+            this.btnGravar.UseVisualStyleBackColor = true;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(163)))), ((int)(((byte)(163)))));
+            this.panel5.Controls.Add(this.textBox2);
+            this.panel5.Controls.Add(this.label7);
+            this.panel5.Controls.Add(this.textBox3);
+            this.panel5.Controls.Add(this.label8);
+            this.panel5.Controls.Add(this.textBox4);
+            this.panel5.Controls.Add(this.label9);
+            this.panel5.Location = new System.Drawing.Point(22, 244);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(199, 121);
+            this.panel5.TabIndex = 6;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(48, 77);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(132, 20);
+            this.textBox2.TabIndex = 5;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.Location = new System.Drawing.Point(3, 78);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(45, 17);
+            this.label7.TabIndex = 4;
+            this.label7.Text = "GTIN:";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(48, 45);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(132, 20);
+            this.textBox3.TabIndex = 3;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.Black;
+            this.label8.Location = new System.Drawing.Point(3, 46);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(39, 17);
+            this.label8.TabIndex = 2;
+            this.label8.Text = "CST:";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(48, 14);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(132, 20);
+            this.textBox4.TabIndex = 1;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Black;
+            this.label9.Location = new System.Drawing.Point(3, 15);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(42, 17);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "NCM:";
             // 
             // frmCadPro
             // 
@@ -160,16 +360,25 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
             this.ClientSize = new System.Drawing.Size(835, 500);
+            this.Controls.Add(this.panel5);
+            this.Controls.Add(this.pnInf);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "frmCadPro";
             this.Text = "Cadastro de produtos";
+            this.Load += new System.EventHandler(this.frmCadPro_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.pnInf.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -186,5 +395,22 @@
         private System.Windows.Forms.Label label2;
         public System.Windows.Forms.TextBox txtCod;
         public System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtValorVenda;
+        private System.Windows.Forms.Panel pnInf;
+        private System.Windows.Forms.TextBox txtValorCusto;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtValorCompra;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button btnGravar;
+        private Button btnExcluir;
     }
 }
