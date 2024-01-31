@@ -19,22 +19,6 @@ namespace ProjetoSistema
             InitializeComponent();
         }
 
-        private void frmPrincipal_Load(object sender, EventArgs e)
-        {
-        }
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnDropCad_MouseEnter(object sender, EventArgs e)
         {
@@ -52,16 +36,19 @@ namespace ProjetoSistema
             pnCad.Visible = false;
 
         }
-
-
-
-        private void button4_Click(object sender, EventArgs e)
+        private void btnDropEst_MouseEnter(object sender, EventArgs e)
         {
+            pnEst.Visible = true;
 
         }
-
-        private void pnCad_Paint(object sender, PaintEventArgs e)
+        private void pnEst_MouseEnter(object sender, EventArgs e)
         {
+            pnEst.Visible = true;
+
+        }
+        private void pnEst_MouseLeave(object sender, EventArgs e)
+        {
+            pnEst.Visible = false;
 
         }
 
@@ -71,5 +58,7 @@ namespace ProjetoSistema
             Abrir.Show();
 
         }
+
+
     }
 }

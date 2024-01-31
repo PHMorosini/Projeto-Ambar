@@ -38,8 +38,13 @@
             this.BtnAbrirCadFor = new System.Windows.Forms.Button();
             this.BtnAbrirCadCli = new System.Windows.Forms.Button();
             this.BtnAbrirCadPro = new System.Windows.Forms.Button();
+            this.pnEst = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.btnListagem = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.pnCad.SuspendLayout();
+            this.pnEst.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -53,7 +58,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(183, 1024);
             this.panel1.TabIndex = 0;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // button3
             // 
@@ -64,7 +68,6 @@
             this.button3.Size = new System.Drawing.Size(184, 53);
             this.button3.TabIndex = 3;
             this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // BtnSearch
             // 
@@ -73,7 +76,7 @@
             this.BtnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.BtnSearch.Location = new System.Drawing.Point(-1, 374);
             this.BtnSearch.Name = "BtnSearch";
-            this.BtnSearch.Size = new System.Drawing.Size(184, 53);
+            this.BtnSearch.Size = new System.Drawing.Size(184, 60);
             this.BtnSearch.TabIndex = 2;
             this.BtnSearch.UseVisualStyleBackColor = false;
             // 
@@ -84,10 +87,10 @@
             this.btnDropEst.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnDropEst.Location = new System.Drawing.Point(0, 273);
             this.btnDropEst.Name = "btnDropEst";
-            this.btnDropEst.Size = new System.Drawing.Size(184, 53);
+            this.btnDropEst.Size = new System.Drawing.Size(184, 67);
             this.btnDropEst.TabIndex = 1;
             this.btnDropEst.UseVisualStyleBackColor = false;
-            this.btnDropEst.Click += new System.EventHandler(this.button1_Click);
+            this.btnDropEst.MouseEnter += new System.EventHandler(this.btnDropEst_MouseEnter);
             // 
             // btnDropCad
             // 
@@ -107,12 +110,11 @@
             this.pnCad.Controls.Add(this.BtnAbrirCadFor);
             this.pnCad.Controls.Add(this.BtnAbrirCadCli);
             this.pnCad.Controls.Add(this.BtnAbrirCadPro);
-            this.pnCad.Location = new System.Drawing.Point(189, 159);
+            this.pnCad.Location = new System.Drawing.Point(186, 161);
             this.pnCad.Name = "pnCad";
             this.pnCad.Size = new System.Drawing.Size(125, 104);
             this.pnCad.TabIndex = 1;
             this.pnCad.Visible = false;
-            this.pnCad.Paint += new System.Windows.Forms.PaintEventHandler(this.pnCad_Paint);
             this.pnCad.MouseEnter += new System.EventHandler(this.pnCad_MouseLeave);
             // 
             // BtnAbrirCadFor
@@ -143,6 +145,44 @@
             this.BtnAbrirCadPro.UseVisualStyleBackColor = true;
             this.BtnAbrirCadPro.Click += new System.EventHandler(this.BtnAbrirCadPro_Click);
             // 
+            // pnEst
+            // 
+            this.pnEst.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(179)))), ((int)(((byte)(181)))));
+            this.pnEst.Controls.Add(this.button1);
+            this.pnEst.Controls.Add(this.button2);
+            this.pnEst.Controls.Add(this.btnListagem);
+            this.pnEst.Location = new System.Drawing.Point(190, 271);
+            this.pnEst.Name = "pnEst";
+            this.pnEst.Size = new System.Drawing.Size(125, 104);
+            this.pnEst.TabIndex = 2;
+            this.pnEst.Visible = false;
+            this.pnEst.MouseEnter += new System.EventHandler(this.pnEst_MouseLeave);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(3, 67);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(118, 32);
+            this.button1.TabIndex = 2;
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(3, 35);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(118, 32);
+            this.button2.TabIndex = 1;
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // btnListagem
+            // 
+            this.btnListagem.Location = new System.Drawing.Point(4, 4);
+            this.btnListagem.Name = "btnListagem";
+            this.btnListagem.Size = new System.Drawing.Size(118, 32);
+            this.btnListagem.TabIndex = 0;
+            this.btnListagem.Text = "Listagem produtos";
+            this.btnListagem.UseVisualStyleBackColor = true;
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -151,14 +191,15 @@
             this.BackgroundImage = global::ProjetoSistema.Properties.Resources.BackgroundImage;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1424, 716);
+            this.Controls.Add(this.pnEst);
             this.Controls.Add(this.pnCad);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmPrincipal";
             this.Text = "Ambar";
-            this.Load += new System.EventHandler(this.frmPrincipal_Load);
             this.panel1.ResumeLayout(false);
             this.pnCad.ResumeLayout(false);
+            this.pnEst.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -174,6 +215,10 @@
         private System.Windows.Forms.Button BtnAbrirCadCli;
         private System.Windows.Forms.Button BtnAbrirCadPro;
         private System.Windows.Forms.Button BtnAbrirCadFor;
+        private System.Windows.Forms.Panel pnEst;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnListagem;
     }
 }
 

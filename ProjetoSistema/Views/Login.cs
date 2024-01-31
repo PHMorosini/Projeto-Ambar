@@ -53,7 +53,7 @@ namespace ProjetoSistema.Views
                     cn.Open();
                     String user = txtUser.Text;
                     String pass = txtPass.Text;
-                    strSQL = "SELECT COUNT(ID) FROM [CADUSER] WHERE [Usuario] = @user AND [Senha] = @pass";
+                    String strSQL = "SELECT COUNT(ID) FROM [CADUSER] WHERE [Usuario] = @user AND [Senha] = @pass";
                     SqlCommand cmd = new SqlCommand(strSQL, cn);
 
                     cmd.Parameters.Add("@user", SqlDbType.VarChar).Value = user;
@@ -65,8 +65,6 @@ namespace ProjetoSistema.Views
                     {
                         MessageBox.Show("Seja bem-vindo "+ user);
                         frmPrincipal Sis = new frmPrincipal();
-
-
                         this.Hide();
                         Sis.Show();
                     }
@@ -119,5 +117,6 @@ namespace ProjetoSistema.Views
                 MessageBox.Show("Falha ao tentar conectar \n" + ex.Message);
             }
         }
+
     }
 }

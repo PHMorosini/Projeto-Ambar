@@ -34,11 +34,9 @@ namespace ProjetoSistema.Views
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtCod = new System.Windows.Forms.TextBox();
-            this.btnPesquisarProd = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.txtDescricao = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.txtValorCusto = new System.Windows.Forms.TextBox();
@@ -48,15 +46,18 @@ namespace ProjetoSistema.Views
             this.txtValorVenda = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.pnInf = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.txtGtin = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtCst = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtNcm = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnGravar = new System.Windows.Forms.Button();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnPesquisarProd = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -73,8 +74,7 @@ namespace ProjetoSistema.Views
             this.panel1.Location = new System.Drawing.Point(-1, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(859, 25);
-            this.panel1.TabIndex = 0;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            this.panel1.TabIndex = 7;
             // 
             // label1
             // 
@@ -106,18 +106,9 @@ namespace ProjetoSistema.Views
             this.txtCod.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.txtCod.Location = new System.Drawing.Point(87, 0);
             this.txtCod.Name = "txtCod";
+            this.txtCod.ReadOnly = true;
             this.txtCod.Size = new System.Drawing.Size(194, 32);
             this.txtCod.TabIndex = 2;
-            this.txtCod.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // btnPesquisarProd
-            // 
-            this.btnPesquisarProd.BackgroundImage = global::ProjetoSistema.Properties.Resources.ImagemPesquisa;
-            this.btnPesquisarProd.Location = new System.Drawing.Point(279, -2);
-            this.btnPesquisarProd.Name = "btnPesquisarProd";
-            this.btnPesquisarProd.Size = new System.Drawing.Size(38, 36);
-            this.btnPesquisarProd.TabIndex = 1;
-            this.btnPesquisarProd.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
@@ -136,7 +127,7 @@ namespace ProjetoSistema.Views
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Controls.Add(this.textBox1);
+            this.panel3.Controls.Add(this.txtDescricao);
             this.panel3.Controls.Add(this.button1);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Location = new System.Drawing.Point(381, 33);
@@ -144,23 +135,14 @@ namespace ProjetoSistema.Views
             this.panel3.Size = new System.Drawing.Size(450, 34);
             this.panel3.TabIndex = 3;
             // 
-            // textBox1
+            // txtDescricao
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.5F);
-            this.textBox1.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.textBox1.Location = new System.Drawing.Point(117, 0);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(294, 32);
-            this.textBox1.TabIndex = 4;
-            // 
-            // button1
-            // 
-            this.button1.BackgroundImage = global::ProjetoSistema.Properties.Resources.ImagemPesquisa;
-            this.button1.Location = new System.Drawing.Point(409, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(41, 34);
-            this.button1.TabIndex = 1;
-            this.button1.UseVisualStyleBackColor = true;
+            this.txtDescricao.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.5F);
+            this.txtDescricao.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtDescricao.Location = new System.Drawing.Point(117, 0);
+            this.txtDescricao.Name = "txtDescricao";
+            this.txtDescricao.Size = new System.Drawing.Size(294, 32);
+            this.txtDescricao.TabIndex = 4;
             // 
             // label2
             // 
@@ -251,12 +233,97 @@ namespace ProjetoSistema.Views
             this.pnInf.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.pnInf.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(206)))), ((int)(((byte)(206)))));
             this.pnInf.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnInf.Controls.Add(this.button2);
             this.pnInf.Controls.Add(this.btnExcluir);
             this.pnInf.Controls.Add(this.btnGravar);
             this.pnInf.Location = new System.Drawing.Point(-1, 466);
             this.pnInf.Name = "pnInf";
             this.pnInf.Size = new System.Drawing.Size(858, 32);
             this.pnInf.TabIndex = 5;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(163)))), ((int)(((byte)(163)))));
+            this.panel5.Controls.Add(this.txtGtin);
+            this.panel5.Controls.Add(this.label7);
+            this.panel5.Controls.Add(this.txtCst);
+            this.panel5.Controls.Add(this.label8);
+            this.panel5.Controls.Add(this.txtNcm);
+            this.panel5.Controls.Add(this.label9);
+            this.panel5.Location = new System.Drawing.Point(22, 244);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(199, 121);
+            this.panel5.TabIndex = 6;
+            // 
+            // txtGtin
+            // 
+            this.txtGtin.Location = new System.Drawing.Point(48, 77);
+            this.txtGtin.Name = "txtGtin";
+            this.txtGtin.Size = new System.Drawing.Size(132, 20);
+            this.txtGtin.TabIndex = 5;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.Location = new System.Drawing.Point(3, 78);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(45, 17);
+            this.label7.TabIndex = 4;
+            this.label7.Text = "GTIN:";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // txtCst
+            // 
+            this.txtCst.Location = new System.Drawing.Point(48, 45);
+            this.txtCst.Name = "txtCst";
+            this.txtCst.Size = new System.Drawing.Size(132, 20);
+            this.txtCst.TabIndex = 3;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.Black;
+            this.label8.Location = new System.Drawing.Point(3, 46);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(39, 17);
+            this.label8.TabIndex = 2;
+            this.label8.Text = "CST:";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // txtNcm
+            // 
+            this.txtNcm.Location = new System.Drawing.Point(48, 14);
+            this.txtNcm.Name = "txtNcm";
+            this.txtNcm.Size = new System.Drawing.Size(132, 20);
+            this.txtNcm.TabIndex = 1;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Black;
+            this.label9.Location = new System.Drawing.Point(3, 15);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(42, 17);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "NCM:";
+            // 
+            // button2
+            // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.BackgroundImage = global::ProjetoSistema.Properties.Resources.btnNovo;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button2.Location = new System.Drawing.Point(455, -2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(121, 32);
+            this.button2.TabIndex = 2;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // btnExcluir
             // 
@@ -283,76 +350,25 @@ namespace ProjetoSistema.Views
             this.btnGravar.Size = new System.Drawing.Size(121, 32);
             this.btnGravar.TabIndex = 0;
             this.btnGravar.UseVisualStyleBackColor = true;
+            this.btnGravar.Click += new System.EventHandler(this.btnGravar_Click);
             // 
-            // panel5
+            // button1
             // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(163)))), ((int)(((byte)(163)))));
-            this.panel5.Controls.Add(this.textBox2);
-            this.panel5.Controls.Add(this.label7);
-            this.panel5.Controls.Add(this.textBox3);
-            this.panel5.Controls.Add(this.label8);
-            this.panel5.Controls.Add(this.textBox4);
-            this.panel5.Controls.Add(this.label9);
-            this.panel5.Location = new System.Drawing.Point(22, 244);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(199, 121);
-            this.panel5.TabIndex = 6;
+            this.button1.BackgroundImage = global::ProjetoSistema.Properties.Resources.ImagemPesquisa;
+            this.button1.Location = new System.Drawing.Point(409, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(41, 34);
+            this.button1.TabIndex = 1;
+            this.button1.UseVisualStyleBackColor = true;
             // 
-            // textBox2
+            // btnPesquisarProd
             // 
-            this.textBox2.Location = new System.Drawing.Point(48, 77);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(132, 20);
-            this.textBox2.TabIndex = 5;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(3, 78);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(45, 17);
-            this.label7.TabIndex = 4;
-            this.label7.Text = "GTIN:";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(48, 45);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(132, 20);
-            this.textBox3.TabIndex = 3;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(3, 46);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(39, 17);
-            this.label8.TabIndex = 2;
-            this.label8.Text = "CST:";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(48, 14);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(132, 20);
-            this.textBox4.TabIndex = 1;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(3, 15);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(42, 17);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "NCM:";
+            this.btnPesquisarProd.BackgroundImage = global::ProjetoSistema.Properties.Resources.ImagemPesquisa;
+            this.btnPesquisarProd.Location = new System.Drawing.Point(279, -2);
+            this.btnPesquisarProd.Name = "btnPesquisarProd";
+            this.btnPesquisarProd.Size = new System.Drawing.Size(38, 36);
+            this.btnPesquisarProd.TabIndex = 1;
+            this.btnPesquisarProd.UseVisualStyleBackColor = true;
             // 
             // frmCadPro
             // 
@@ -368,7 +384,6 @@ namespace ProjetoSistema.Views
             this.Controls.Add(this.panel1);
             this.Name = "frmCadPro";
             this.Text = "Cadastro de produtos";
-            this.Load += new System.EventHandler(this.frmCadPro_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -394,7 +409,7 @@ namespace ProjetoSistema.Views
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label2;
         public System.Windows.Forms.TextBox txtCod;
-        public System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.TextBox txtDescricao;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
@@ -404,13 +419,14 @@ namespace ProjetoSistema.Views
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtValorCompra;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtGtin;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtCst;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtNcm;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnGravar;
         private Button btnExcluir;
+        private Button button2;
     }
 }

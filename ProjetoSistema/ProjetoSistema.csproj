@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class\Conjunct.cs" />
     <Compile Include="Class\Conn.cs" />
     <Compile Include="Views\frmCadPro.cs">
       <SubType>Form</SubType>
@@ -144,6 +145,7 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="CreatesSql\ComandosSQL.txt" />
+    <None Include="Resources\btnNovo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

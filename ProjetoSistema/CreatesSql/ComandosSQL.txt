@@ -11,3 +11,21 @@ CREATE TABLE CadUser (
 insert into CadUser (Usuario,Senha,Ativo) values ('ADMIN','1ADMIN23','1')
 
 //
+
+//CRIAR TABELA DE USUARIO
+
+CREATE TABLE CadPro (
+    ID INT IDENTITY(1,1) PRIMARY KEY,
+    Descricao VARCHAR(100),
+    VlrVenda decimal(12,4),
+	VlrCusto decimal(12,4),
+	VlrCompra decimal (12,4),
+	gtin varchar(20),
+	cst varchar (4),
+	ncm VARCHAR (10),
+    Ativo BIT
+);
+
+insert into CadPro (Descricao,VlrVenda,VlrCusto,VlrCompra,gtin,cst,ncm,ativo) values ('Produto padrao','1.00','1.00','1.00','SEM GTIN','000','95059000','1')
+
+//
