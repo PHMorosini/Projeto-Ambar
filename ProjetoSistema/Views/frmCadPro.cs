@@ -54,6 +54,14 @@ namespace ProjetoSistema.Views
                         Add.ExecuteNonQuery();
                         MessageBox.Show("Produto cadastrado com sucesso");
 
+                        txtDescricao.Text = "";
+                        txtValorVenda.Text = "";
+                        txtValorCusto.Text = "";
+                        txtValorCompra.Text = "";
+                        txtGtin.Text = "";
+                        txtNcm.Text = "";
+                        txtCst.Text = "";
+
                     }
                 }
             }
