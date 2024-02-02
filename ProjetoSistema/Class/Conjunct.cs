@@ -19,5 +19,19 @@ namespace ProjetoSistema.Class
         //aqui vou estar criando os metodos gerais do sistema
     }
 
- 
+    public static class ConversoresdeString
+    {
+        public static string TrocarPontoPorVirgula(this string value)
+        {
+            return value.Replace(".", ",");
+        }
+
+        public static string ObservadorParaMaiusculo(this string value,TextBox textBox)
+        {
+            textBox.Text = value.ToUpper();
+            textBox.Select(textBox.Text.Length,0);
+            return value.ToUpper();
+           
+        }
+    }
 }

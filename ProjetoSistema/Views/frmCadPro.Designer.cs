@@ -38,7 +38,7 @@ namespace ProjetoSistema.Views
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtDescricao = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnPesquisarDescri = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.txtValorCompra = new System.Windows.Forms.MaskedTextBox();
@@ -48,7 +48,7 @@ namespace ProjetoSistema.Views
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.pnInf = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnNovo = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnGravar = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -113,9 +113,10 @@ namespace ProjetoSistema.Views
             // btnPesquisarProd
             // 
             this.btnPesquisarProd.BackgroundImage = global::ProjetoSistema.Properties.Resources.ImagemPesquisa;
+            this.btnPesquisarProd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnPesquisarProd.Location = new System.Drawing.Point(279, -2);
             this.btnPesquisarProd.Name = "btnPesquisarProd";
-            this.btnPesquisarProd.Size = new System.Drawing.Size(38, 36);
+            this.btnPesquisarProd.Size = new System.Drawing.Size(41, 36);
             this.btnPesquisarProd.TabIndex = 1;
             this.btnPesquisarProd.UseVisualStyleBackColor = true;
             // 
@@ -137,7 +138,7 @@ namespace ProjetoSistema.Views
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.Controls.Add(this.txtDescricao);
-            this.panel3.Controls.Add(this.button1);
+            this.panel3.Controls.Add(this.btnPesquisarDescri);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Location = new System.Drawing.Point(381, 33);
             this.panel3.Name = "panel3";
@@ -152,15 +153,17 @@ namespace ProjetoSistema.Views
             this.txtDescricao.Name = "txtDescricao";
             this.txtDescricao.Size = new System.Drawing.Size(294, 32);
             this.txtDescricao.TabIndex = 4;
+            this.txtDescricao.TextChanged += new System.EventHandler(this.txtDescricao_TextChanged);
             // 
-            // button1
+            // btnPesquisarDescri
             // 
-            this.button1.BackgroundImage = global::ProjetoSistema.Properties.Resources.ImagemPesquisa;
-            this.button1.Location = new System.Drawing.Point(409, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(41, 34);
-            this.button1.TabIndex = 1;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnPesquisarDescri.BackgroundImage = global::ProjetoSistema.Properties.Resources.ImagemPesquisa;
+            this.btnPesquisarDescri.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPesquisarDescri.Location = new System.Drawing.Point(409, 0);
+            this.btnPesquisarDescri.Name = "btnPesquisarDescri";
+            this.btnPesquisarDescri.Size = new System.Drawing.Size(41, 34);
+            this.btnPesquisarDescri.TabIndex = 1;
+            this.btnPesquisarDescri.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -254,7 +257,7 @@ namespace ProjetoSistema.Views
             this.pnInf.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.pnInf.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(206)))), ((int)(((byte)(206)))));
             this.pnInf.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnInf.Controls.Add(this.button2);
+            this.pnInf.Controls.Add(this.btnNovo);
             this.pnInf.Controls.Add(this.btnExcluir);
             this.pnInf.Controls.Add(this.btnGravar);
             this.pnInf.Location = new System.Drawing.Point(-1, 466);
@@ -262,19 +265,19 @@ namespace ProjetoSistema.Views
             this.pnInf.Size = new System.Drawing.Size(858, 32);
             this.pnInf.TabIndex = 5;
             // 
-            // button2
+            // btnNovo
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.btnNovo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.BackgroundImage = global::ProjetoSistema.Properties.Resources.btnNovo;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.Location = new System.Drawing.Point(455, -2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(121, 32);
-            this.button2.TabIndex = 2;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnNovo.BackgroundImage = global::ProjetoSistema.Properties.Resources.btnNovo;
+            this.btnNovo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnNovo.Location = new System.Drawing.Point(455, -2);
+            this.btnNovo.Name = "btnNovo";
+            this.btnNovo.Size = new System.Drawing.Size(121, 32);
+            this.btnNovo.TabIndex = 2;
+            this.btnNovo.UseVisualStyleBackColor = true;
+            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
             // 
             // btnExcluir
             // 
@@ -412,7 +415,7 @@ namespace ProjetoSistema.Views
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnPesquisarProd;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnPesquisarDescri;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label4;
@@ -428,7 +431,7 @@ namespace ProjetoSistema.Views
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnGravar;
         private Button btnExcluir;
-        private Button button2;
+        private Button btnNovo;
         public TextBox txtCod;
         public TextBox txtDescricao;
         private MaskedTextBox txtValorCompra;

@@ -28,9 +28,9 @@ namespace ProjetoSistema.Views
             {
 
                 string Descricao = txtDescricao.Text;
-                decimal VlrVenda = decimal.Parse(txtValorVenda.Text, CultureInfo.InvariantCulture);
-                decimal VlrCompra = decimal.Parse(txtValorCompra.Text, CultureInfo.InvariantCulture);
-                decimal VlrCusto = decimal.Parse(txtValorCusto.Text, CultureInfo.InvariantCulture);
+                decimal VlrVenda = decimal.Parse(txtValorVenda.Text.TrocarPontoPorVirgula());
+                decimal VlrCompra = decimal.Parse(txtValorCompra.Text.TrocarPontoPorVirgula());
+                decimal VlrCusto = decimal.Parse(txtValorCusto.Text.TrocarPontoPorVirgula());
                 string Cst = txtCst.Text;
                 string Ncm = txtNcm.Text;
                 string Gtin = txtGtin.Text;
@@ -71,7 +71,7 @@ namespace ProjetoSistema.Views
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnNovo_Click(object sender, EventArgs e)
         {
             txtDescricao.Text = "";
             txtValorVenda.Text = "";
@@ -81,6 +81,11 @@ namespace ProjetoSistema.Views
             txtNcm.Text = "";
             txtCst.Text = "";
 
+        }
+
+        private void txtDescricao_TextChanged(object sender, EventArgs e)
+        {
+            txtDescricao.Text.ObservadorParaMaiusculo(txtDescricao);
         }
     }
 }

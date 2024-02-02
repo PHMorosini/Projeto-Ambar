@@ -41,7 +41,7 @@ namespace ProjetoSistema.Views
 
         private void txtUser_TextChanged(object sender, EventArgs e)
         {
-
+            txtUser.Text.ObservadorParaMaiusculo(txtUser);
         }
 
         private void btnEntrar_Click(object sender, EventArgs e)
@@ -118,5 +118,9 @@ namespace ProjetoSistema.Views
             }
         }
 
+        private void txtPass_TextChanged(object sender, EventArgs e)
+        {
+            txtPass.Text.ObservadorParaMaiusculo(txtPass);
+        }
     }
 }
