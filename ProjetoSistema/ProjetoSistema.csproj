@@ -46,8 +46,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AmbarDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AmbarDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Class\Conjunct.cs" />
     <Compile Include="Class\Conn.cs" />
+    <Compile Include="Class\Querry.cs" />
     <Compile Include="Views\frmCadPro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +102,17 @@
     <EmbeddedResource Include="Views\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="AmbarDataSet.xsc">
+      <DependentUpon>AmbarDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="AmbarDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AmbarDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AmbarDataSet.xss">
+      <DependentUpon>AmbarDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -154,6 +171,8 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="CreatesSql\ComandosSQL.txt" />
+    <None Include="Resources\btnConfirmar.png" />
+    <None Include="Resources\confirmar.png" />
     <None Include="Resources\btnNovo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

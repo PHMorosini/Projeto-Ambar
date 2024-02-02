@@ -87,5 +87,17 @@ namespace ProjetoSistema.Views
         {
             txtDescricao.Text.ObservadorParaMaiusculo(txtDescricao);
         }
+
+        private void btnPesquisarProd_Click(object sender, EventArgs e)
+        {
+            frmPesquisaProd frmPesquisaProd = new frmPesquisaProd();
+            frmPesquisaProd.Show();
+        }
+
+        private void btnPesquisarDescri_Click(object sender, EventArgs e)
+        {
+            frmPesquisaProd p = new frmPesquisaProd();
+            p.Show();
+        }
     }
 }
