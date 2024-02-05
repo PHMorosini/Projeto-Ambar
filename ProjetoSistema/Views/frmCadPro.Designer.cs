@@ -34,9 +34,11 @@ namespace ProjetoSistema.Views
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtCod = new System.Windows.Forms.TextBox();
+            this.btnPesquisarProd = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtDescricao = new System.Windows.Forms.TextBox();
+            this.btnPesquisarDescri = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.txtValorCompra = new System.Windows.Forms.MaskedTextBox();
@@ -46,6 +48,9 @@ namespace ProjetoSistema.Views
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.pnInf = new System.Windows.Forms.Panel();
+            this.btnNovo = new System.Windows.Forms.Button();
+            this.btnExcluir = new System.Windows.Forms.Button();
+            this.btnGravar = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.txtGtin = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -53,11 +58,6 @@ namespace ProjetoSistema.Views
             this.label8 = new System.Windows.Forms.Label();
             this.txtNcm = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.btnNovo = new System.Windows.Forms.Button();
-            this.btnExcluir = new System.Windows.Forms.Button();
-            this.btnGravar = new System.Windows.Forms.Button();
-            this.btnPesquisarDescri = new System.Windows.Forms.Button();
-            this.btnPesquisarProd = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -110,6 +110,17 @@ namespace ProjetoSistema.Views
             this.txtCod.Size = new System.Drawing.Size(194, 32);
             this.txtCod.TabIndex = 2;
             // 
+            // btnPesquisarProd
+            // 
+            this.btnPesquisarProd.BackgroundImage = global::ProjetoSistema.Properties.Resources.ImagemPesquisa;
+            this.btnPesquisarProd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPesquisarProd.Location = new System.Drawing.Point(279, -2);
+            this.btnPesquisarProd.Name = "btnPesquisarProd";
+            this.btnPesquisarProd.Size = new System.Drawing.Size(41, 36);
+            this.btnPesquisarProd.TabIndex = 1;
+            this.btnPesquisarProd.UseVisualStyleBackColor = true;
+            this.btnPesquisarProd.Click += new System.EventHandler(this.btnPesquisarProd_Click);
+            // 
             // label3
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -144,6 +155,17 @@ namespace ProjetoSistema.Views
             this.txtDescricao.Size = new System.Drawing.Size(294, 32);
             this.txtDescricao.TabIndex = 4;
             this.txtDescricao.TextChanged += new System.EventHandler(this.txtDescricao_TextChanged);
+            // 
+            // btnPesquisarDescri
+            // 
+            this.btnPesquisarDescri.BackgroundImage = global::ProjetoSistema.Properties.Resources.ImagemPesquisa;
+            this.btnPesquisarDescri.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPesquisarDescri.Location = new System.Drawing.Point(409, 0);
+            this.btnPesquisarDescri.Name = "btnPesquisarDescri";
+            this.btnPesquisarDescri.Size = new System.Drawing.Size(41, 34);
+            this.btnPesquisarDescri.TabIndex = 1;
+            this.btnPesquisarDescri.UseVisualStyleBackColor = true;
+            this.btnPesquisarDescri.Click += new System.EventHandler(this.btnPesquisarDescri_Click);
             // 
             // label2
             // 
@@ -245,6 +267,48 @@ namespace ProjetoSistema.Views
             this.pnInf.Size = new System.Drawing.Size(858, 32);
             this.pnInf.TabIndex = 5;
             // 
+            // btnNovo
+            // 
+            this.btnNovo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNovo.BackgroundImage = global::ProjetoSistema.Properties.Resources.btnNovo;
+            this.btnNovo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnNovo.Location = new System.Drawing.Point(455, -2);
+            this.btnNovo.Name = "btnNovo";
+            this.btnNovo.Size = new System.Drawing.Size(121, 32);
+            this.btnNovo.TabIndex = 2;
+            this.btnNovo.UseVisualStyleBackColor = true;
+            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
+            // 
+            // btnExcluir
+            // 
+            this.btnExcluir.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExcluir.BackgroundImage = global::ProjetoSistema.Properties.Resources.btnExcluir;
+            this.btnExcluir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnExcluir.Location = new System.Drawing.Point(582, -2);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(121, 32);
+            this.btnExcluir.TabIndex = 1;
+            this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
+            // 
+            // btnGravar
+            // 
+            this.btnGravar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGravar.BackgroundImage = global::ProjetoSistema.Properties.Resources.btnSalvar;
+            this.btnGravar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnGravar.Location = new System.Drawing.Point(709, -2);
+            this.btnGravar.Name = "btnGravar";
+            this.btnGravar.Size = new System.Drawing.Size(121, 32);
+            this.btnGravar.TabIndex = 0;
+            this.btnGravar.UseVisualStyleBackColor = true;
+            this.btnGravar.Click += new System.EventHandler(this.btnGravar_Click);
+            // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(163)))), ((int)(((byte)(163)))));
@@ -317,69 +381,6 @@ namespace ProjetoSistema.Views
             this.label9.Size = new System.Drawing.Size(42, 17);
             this.label9.TabIndex = 0;
             this.label9.Text = "NCM:";
-            // 
-            // btnNovo
-            // 
-            this.btnNovo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNovo.BackgroundImage = global::ProjetoSistema.Properties.Resources.btnNovo;
-            this.btnNovo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnNovo.Location = new System.Drawing.Point(455, -2);
-            this.btnNovo.Name = "btnNovo";
-            this.btnNovo.Size = new System.Drawing.Size(121, 32);
-            this.btnNovo.TabIndex = 2;
-            this.btnNovo.UseVisualStyleBackColor = true;
-            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
-            // 
-            // btnExcluir
-            // 
-            this.btnExcluir.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnExcluir.BackgroundImage = global::ProjetoSistema.Properties.Resources.btnExcluir;
-            this.btnExcluir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnExcluir.Location = new System.Drawing.Point(582, -2);
-            this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(121, 32);
-            this.btnExcluir.TabIndex = 1;
-            this.btnExcluir.UseVisualStyleBackColor = true;
-            // 
-            // btnGravar
-            // 
-            this.btnGravar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGravar.BackgroundImage = global::ProjetoSistema.Properties.Resources.btnSalvar;
-            this.btnGravar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnGravar.Location = new System.Drawing.Point(709, -2);
-            this.btnGravar.Name = "btnGravar";
-            this.btnGravar.Size = new System.Drawing.Size(121, 32);
-            this.btnGravar.TabIndex = 0;
-            this.btnGravar.UseVisualStyleBackColor = true;
-            this.btnGravar.Click += new System.EventHandler(this.btnGravar_Click);
-            // 
-            // btnPesquisarDescri
-            // 
-            this.btnPesquisarDescri.BackgroundImage = global::ProjetoSistema.Properties.Resources.ImagemPesquisa;
-            this.btnPesquisarDescri.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnPesquisarDescri.Location = new System.Drawing.Point(409, 0);
-            this.btnPesquisarDescri.Name = "btnPesquisarDescri";
-            this.btnPesquisarDescri.Size = new System.Drawing.Size(41, 34);
-            this.btnPesquisarDescri.TabIndex = 1;
-            this.btnPesquisarDescri.UseVisualStyleBackColor = true;
-            this.btnPesquisarDescri.Click += new System.EventHandler(this.btnPesquisarDescri_Click);
-            // 
-            // btnPesquisarProd
-            // 
-            this.btnPesquisarProd.BackgroundImage = global::ProjetoSistema.Properties.Resources.ImagemPesquisa;
-            this.btnPesquisarProd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnPesquisarProd.Location = new System.Drawing.Point(279, -2);
-            this.btnPesquisarProd.Name = "btnPesquisarProd";
-            this.btnPesquisarProd.Size = new System.Drawing.Size(41, 36);
-            this.btnPesquisarProd.TabIndex = 1;
-            this.btnPesquisarProd.UseVisualStyleBackColor = true;
-            this.btnPesquisarProd.Click += new System.EventHandler(this.btnPesquisarProd_Click);
             // 
             // frmCadPro
             // 

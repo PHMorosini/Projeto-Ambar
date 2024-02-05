@@ -28,6 +28,7 @@ namespace ProjetoSistema.Views
             txtGtin.Text = gtin;
             txtNcm.Text = ncm;
             txtCst.Text =cst ;
+            var Ativo = ativo;
            
         }
         public frmCadPro()
@@ -113,6 +114,12 @@ namespace ProjetoSistema.Views
         {
             frmPesquisaProd p = new frmPesquisaProd();
             p.Show();
+            this.Close();
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            AttCadastros.ExcluirEntidade("CADPRO", txtCod);
         }
     }
 }
