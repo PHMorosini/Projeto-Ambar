@@ -31,16 +31,15 @@
             this.components = new System.ComponentModel.Container();
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtCod = new System.Windows.Forms.TextBox();
+            this.btnPesquisarProd = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtDescricao = new System.Windows.Forms.TextBox();
+            this.btnPesquisarDescri = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.dtgProdutos = new System.Windows.Forms.DataGridView();
-            this.ambarDataSet = new ProjetoSistema.AmbarDataSet();
-            this.cadProBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.cadProTableAdapter = new ProjetoSistema.AmbarDataSetTableAdapters.CadProTableAdapter();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descricaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vlrVendaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,16 +49,17 @@
             this.cstDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ncmDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ativoDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.cadProBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ambarDataSet = new ProjetoSistema.AmbarDataSet();
+            this.cadProTableAdapter = new ProjetoSistema.AmbarDataSetTableAdapters.CadProTableAdapter();
             this.pnInf = new System.Windows.Forms.Panel();
             this.btnConfirmar = new System.Windows.Forms.Button();
-            this.btnPesquisarDescri = new System.Windows.Forms.Button();
-            this.btnPesquisarProd = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgProdutos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ambarDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cadProBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ambarDataSet)).BeginInit();
             this.pnInf.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -83,6 +83,18 @@
             this.txtCod.Size = new System.Drawing.Size(194, 32);
             this.txtCod.TabIndex = 2;
             this.txtCod.TextChanged += new System.EventHandler(this.txtCod_TextChanged);
+            // 
+            // btnPesquisarProd
+            // 
+            this.btnPesquisarProd.BackgroundImage = global::ProjetoSistema.Properties.Resources.ImagemPesquisa;
+            this.btnPesquisarProd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPesquisarProd.Enabled = false;
+            this.btnPesquisarProd.Location = new System.Drawing.Point(279, -2);
+            this.btnPesquisarProd.Name = "btnPesquisarProd";
+            this.btnPesquisarProd.Size = new System.Drawing.Size(41, 36);
+            this.btnPesquisarProd.TabIndex = 1;
+            this.btnPesquisarProd.UseVisualStyleBackColor = true;
+            this.btnPesquisarProd.Click += new System.EventHandler(this.btnPesquisarProd_Click);
             // 
             // label3
             // 
@@ -143,6 +155,18 @@
             this.txtDescricao.TabIndex = 4;
             this.txtDescricao.TextChanged += new System.EventHandler(this.txtDescricao_TextChanged);
             // 
+            // btnPesquisarDescri
+            // 
+            this.btnPesquisarDescri.BackgroundImage = global::ProjetoSistema.Properties.Resources.ImagemPesquisa;
+            this.btnPesquisarDescri.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPesquisarDescri.Enabled = false;
+            this.btnPesquisarDescri.Location = new System.Drawing.Point(409, 0);
+            this.btnPesquisarDescri.Name = "btnPesquisarDescri";
+            this.btnPesquisarDescri.Size = new System.Drawing.Size(41, 34);
+            this.btnPesquisarDescri.TabIndex = 1;
+            this.btnPesquisarDescri.UseVisualStyleBackColor = true;
+            this.btnPesquisarDescri.Click += new System.EventHandler(this.btnPesquisarDescri_Click);
+            // 
             // label2
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -159,6 +183,8 @@
             // 
             // dtgProdutos
             // 
+            this.dtgProdutos.AllowUserToAddRows = false;
+            this.dtgProdutos.AllowUserToDeleteRows = false;
             this.dtgProdutos.AutoGenerateColumns = false;
             this.dtgProdutos.BackgroundColor = System.Drawing.Color.White;
             this.dtgProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -179,20 +205,7 @@
             this.dtgProdutos.Name = "dtgProdutos";
             this.dtgProdutos.Size = new System.Drawing.Size(806, 348);
             this.dtgProdutos.TabIndex = 10;
-            // 
-            // ambarDataSet
-            // 
-            this.ambarDataSet.DataSetName = "AmbarDataSet";
-            this.ambarDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // cadProBindingSource
-            // 
-            this.cadProBindingSource.DataMember = "CadPro";
-            this.cadProBindingSource.DataSource = this.ambarDataSet;
-            // 
-            // cadProTableAdapter
-            // 
-            this.cadProTableAdapter.ClearBeforeFill = true;
+            this.dtgProdutos.SelectionChanged += new System.EventHandler(this.dtgProdutos_SelectionChanged);
             // 
             // iDDataGridViewTextBoxColumn
             // 
@@ -249,6 +262,20 @@
             this.ativoDataGridViewCheckBoxColumn.HeaderText = "Ativo";
             this.ativoDataGridViewCheckBoxColumn.Name = "ativoDataGridViewCheckBoxColumn";
             // 
+            // cadProBindingSource
+            // 
+            this.cadProBindingSource.DataMember = "CadPro";
+            this.cadProBindingSource.DataSource = this.ambarDataSet;
+            // 
+            // ambarDataSet
+            // 
+            this.ambarDataSet.DataSetName = "AmbarDataSet";
+            this.ambarDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // cadProTableAdapter
+            // 
+            this.cadProTableAdapter.ClearBeforeFill = true;
+            // 
             // pnInf
             // 
             this.pnInf.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -272,30 +299,7 @@
             this.btnConfirmar.Size = new System.Drawing.Size(116, 31);
             this.btnConfirmar.TabIndex = 2;
             this.btnConfirmar.UseVisualStyleBackColor = true;
-            // 
-            // btnPesquisarDescri
-            // 
-            this.btnPesquisarDescri.BackgroundImage = global::ProjetoSistema.Properties.Resources.ImagemPesquisa;
-            this.btnPesquisarDescri.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnPesquisarDescri.Enabled = false;
-            this.btnPesquisarDescri.Location = new System.Drawing.Point(409, 0);
-            this.btnPesquisarDescri.Name = "btnPesquisarDescri";
-            this.btnPesquisarDescri.Size = new System.Drawing.Size(41, 34);
-            this.btnPesquisarDescri.TabIndex = 1;
-            this.btnPesquisarDescri.UseVisualStyleBackColor = true;
-            this.btnPesquisarDescri.Click += new System.EventHandler(this.btnPesquisarDescri_Click);
-            // 
-            // btnPesquisarProd
-            // 
-            this.btnPesquisarProd.BackgroundImage = global::ProjetoSistema.Properties.Resources.ImagemPesquisa;
-            this.btnPesquisarProd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnPesquisarProd.Enabled = false;
-            this.btnPesquisarProd.Location = new System.Drawing.Point(279, -2);
-            this.btnPesquisarProd.Name = "btnPesquisarProd";
-            this.btnPesquisarProd.Size = new System.Drawing.Size(41, 36);
-            this.btnPesquisarProd.TabIndex = 1;
-            this.btnPesquisarProd.UseVisualStyleBackColor = true;
-            this.btnPesquisarProd.Click += new System.EventHandler(this.btnPesquisarProd_Click);
+            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
             // frmPesquisaProd
             // 
@@ -317,8 +321,8 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgProdutos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ambarDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cadProBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ambarDataSet)).EndInit();
             this.pnInf.ResumeLayout(false);
             this.ResumeLayout(false);
 

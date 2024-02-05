@@ -16,6 +16,20 @@ namespace ProjetoSistema.Views
 {
     public partial class frmCadPro : Form
     {
+        public frmCadPro(string id,string descricao,string vlrvenda, string vlrcusto, string vlrcompra, string gtin,string cst, string ncm, bool ativo)
+        {
+            InitializeComponent();
+
+            txtCod.Text = id;
+            txtDescricao.Text = descricao;
+            txtValorVenda.Text= vlrvenda;
+            txtValorCompra.Text = vlrcompra;
+            txtValorCusto.Text = vlrcusto;
+            txtGtin.Text = gtin;
+            txtNcm.Text = ncm;
+            txtCst.Text =cst ;
+           
+        }
         public frmCadPro()
         {
             InitializeComponent();
@@ -92,6 +106,7 @@ namespace ProjetoSistema.Views
         {
             frmPesquisaProd frmPesquisaProd = new frmPesquisaProd();
             frmPesquisaProd.Show();
+            this.Close();
         }
 
         private void btnPesquisarDescri_Click(object sender, EventArgs e)

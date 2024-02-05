@@ -11,7 +11,7 @@ namespace ProjetoSistema.Class
 {
     internal class Querry
     {
-        public static void FillarDataGrield(TextBox TextoBusca, DataGridView Grid,string NomeCampo)
+        public static void FillarDataGrid(TextBox TextoBusca, DataGridView Grid,string NomeCampo)
         {
             string TextoPesquisa = TextoBusca.Text;
             if (TextoPesquisa == "%")
