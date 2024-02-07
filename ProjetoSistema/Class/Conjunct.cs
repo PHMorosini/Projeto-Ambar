@@ -31,9 +31,38 @@ namespace ProjetoSistema.Class
             textBox.Text = value.ToUpper();
             textBox.Select(textBox.Text.Length, 0);
             return value.ToUpper();
-
+        }
+        public static void SoNumero(this string value,TextBox textBox, KeyPressEventArgs e)
+        {
+            try
+            {
+                if ((!char.IsDigit(e.KeyChar) && e.KeyChar != ',' && !char.IsControl(e.KeyChar)) ||
+            (e.KeyChar == ',' && textBox.Text.Contains(",")))
+                {
+                    e.Handled = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Digite somente numeros{ex.Message}"); 
+            }
         }
 
+        public static void SoNumero(this string value, MaskedTextBox textBox, KeyPressEventArgs e)
+        {
+            try
+            {
+                if ((!char.IsDigit(e.KeyChar) && e.KeyChar != ',' && !char.IsControl(e.KeyChar)) ||
+            (e.KeyChar == ',' && textBox.Text.Contains(",")))
+                {
+                    e.Handled = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Digite somente numeros{ex.Message}");
+            }
+        }
     }
     public static class AttCadastros
     {

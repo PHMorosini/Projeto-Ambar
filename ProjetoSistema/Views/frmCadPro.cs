@@ -29,7 +29,10 @@ namespace ProjetoSistema.Views
             txtNcm.Text = ncm;
             txtCst.Text =cst ;
             var Ativo = ativo;
-           
+
+
+            if (Ativo == false) { btnRestaurar.Enabled = true; btnRestaurar.Visible = true; btnExcluir.Enabled = false; btnExcluir.Visible = false; }
+            else { btnRestaurar.Enabled = false; btnRestaurar.Visible = false; btnExcluir.Enabled = true; btnExcluir.Visible = true;  }
         }
         public frmCadPro()
         {
@@ -120,6 +123,31 @@ namespace ProjetoSistema.Views
         private void btnExcluir_Click(object sender, EventArgs e)
         {
             AttCadastros.ExcluirEntidade("CADPRO", txtCod);
+            btnRestaurar.Enabled = true; btnRestaurar.Visible = true; btnExcluir.Enabled = false; btnExcluir.Visible = false;
+        }
+
+        private void btnRestaurar_Click(object sender, EventArgs e)
+        {
+            AttCadastros.RestaurarEntidade("CADPRO", txtCod);
+            btnRestaurar.Enabled = false; btnRestaurar.Visible = false; btnExcluir.Enabled = true; btnExcluir.Visible = true;
+        }
+
+        private void txtValorVenda_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            txtValorVenda.Text.TrocarPontoPorVirgula();
+            txtValorVenda.Text.SoNumero(txtValorVenda, e);
+        }
+
+        private void txtValorCompra_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            txtValorCompra.Text.TrocarPontoPorVirgula();
+            txtValorCompra.Text.SoNumero(txtValorCompra, e);
+        }
+
+        private void txtValorCusto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            txtValorCusto.Text.TrocarPontoPorVirgula();
+            txtValorCusto.Text.SoNumero(txtValorCusto, e);
         }
     }
 }

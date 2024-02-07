@@ -48,6 +48,7 @@ namespace ProjetoSistema.Views
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.pnInf = new System.Windows.Forms.Panel();
+            this.btnRestaurar = new System.Windows.Forms.Button();
             this.btnNovo = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnGravar = new System.Windows.Forms.Button();
@@ -198,18 +199,18 @@ namespace ProjetoSistema.Views
             // txtValorCompra
             // 
             this.txtValorCompra.Location = new System.Drawing.Point(146, 45);
-            this.txtValorCompra.Mask = "9999,90";
             this.txtValorCompra.Name = "txtValorCompra";
             this.txtValorCompra.Size = new System.Drawing.Size(132, 20);
             this.txtValorCompra.TabIndex = 9;
+            this.txtValorCompra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValorCompra_KeyPress);
             // 
             // txtValorCusto
             // 
             this.txtValorCusto.Location = new System.Drawing.Point(146, 78);
-            this.txtValorCusto.Mask = "9999,90";
             this.txtValorCusto.Name = "txtValorCusto";
             this.txtValorCusto.Size = new System.Drawing.Size(132, 20);
             this.txtValorCusto.TabIndex = 10;
+            this.txtValorCusto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValorCusto_KeyPress);
             // 
             // label6
             // 
@@ -226,10 +227,10 @@ namespace ProjetoSistema.Views
             // txtValorVenda
             // 
             this.txtValorVenda.Location = new System.Drawing.Point(146, 14);
-            this.txtValorVenda.Mask = "9999,90";
             this.txtValorVenda.Name = "txtValorVenda";
             this.txtValorVenda.Size = new System.Drawing.Size(132, 20);
             this.txtValorVenda.TabIndex = 8;
+            this.txtValorVenda.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValorVenda_KeyPress);
             // 
             // label5
             // 
@@ -259,6 +260,7 @@ namespace ProjetoSistema.Views
             this.pnInf.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.pnInf.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(206)))), ((int)(((byte)(206)))));
             this.pnInf.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnInf.Controls.Add(this.btnRestaurar);
             this.pnInf.Controls.Add(this.btnNovo);
             this.pnInf.Controls.Add(this.btnExcluir);
             this.pnInf.Controls.Add(this.btnGravar);
@@ -266,6 +268,22 @@ namespace ProjetoSistema.Views
             this.pnInf.Name = "pnInf";
             this.pnInf.Size = new System.Drawing.Size(858, 32);
             this.pnInf.TabIndex = 5;
+            // 
+            // btnRestaurar
+            // 
+            this.btnRestaurar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRestaurar.BackgroundImage = global::ProjetoSistema.Properties.Resources.btnConfirmar__1_;
+            this.btnRestaurar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnRestaurar.Enabled = false;
+            this.btnRestaurar.Location = new System.Drawing.Point(582, -2);
+            this.btnRestaurar.Name = "btnRestaurar";
+            this.btnRestaurar.Size = new System.Drawing.Size(121, 32);
+            this.btnRestaurar.TabIndex = 8;
+            this.btnRestaurar.UseVisualStyleBackColor = true;
+            this.btnRestaurar.Visible = false;
+            this.btnRestaurar.Click += new System.EventHandler(this.btnRestaurar_Click);
             // 
             // btnNovo
             // 
@@ -440,5 +458,6 @@ namespace ProjetoSistema.Views
         private MaskedTextBox txtValorCompra;
         private MaskedTextBox txtValorCusto;
         private MaskedTextBox txtValorVenda;
+        private Button btnRestaurar;
     }
 }

@@ -163,6 +163,16 @@ namespace ProjetoSistema.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap btnConfirmar__1_ {
+            get {
+                object obj = ResourceManager.GetObject("btnConfirmar (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap btnExcluir {
             get {
                 object obj = ResourceManager.GetObject("btnExcluir", resourceCulture);
@@ -176,6 +186,16 @@ namespace ProjetoSistema.Properties {
         internal static System.Drawing.Bitmap btnNovo {
             get {
                 object obj = ResourceManager.GetObject("btnNovo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap btnRestaurar {
+            get {
+                object obj = ResourceManager.GetObject("btnRestaurar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

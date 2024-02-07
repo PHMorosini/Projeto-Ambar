@@ -40,7 +40,7 @@ namespace ProjetoSistema.Views
         private void btnPesquisarProd_Click(object sender, EventArgs e)
         {
             
-                Querry.FillarDataGrid(txtCod,dtgProdutos,"ID");
+                Querry.PesquisarNaGrid(txtCod,dtgProdutos,"ID");
             
         }
 
@@ -52,7 +52,7 @@ namespace ProjetoSistema.Views
 
         private void btnPesquisarDescri_Click(object sender, EventArgs e)
         {
-            Querry.FillarDataGrid(txtDescricao, dtgProdutos, "DESCRICAO");
+            Querry.PesquisarnaGrid(txtDescricao, dtgProdutos, "DESCRICAO");
         }
 
         private void txtDescricao_TextChanged(object sender, EventArgs e)

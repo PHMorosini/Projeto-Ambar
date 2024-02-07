@@ -172,6 +172,8 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="CreatesSql\ComandosSQL.txt" />
+    <None Include="Resources\btnConfirmar %281%29.png" />
+    <None Include="Resources\btnRestaurar.png" />
     <None Include="Resources\btnConfirmar.png" />
     <None Include="Resources\confirmar.png" />
     <None Include="Resources\btnNovo.png" />
