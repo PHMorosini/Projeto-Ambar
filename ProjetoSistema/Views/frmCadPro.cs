@@ -1,38 +1,48 @@
 ﻿using ProjetoSistema.Class;
+using ProjetoSistema.Entities;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Globalization;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ProjetoSistema.Views
 {
     public partial class frmCadPro : Form
     {
-        public frmCadPro(string id,string descricao,string vlrvenda, string vlrcusto, string vlrcompra, string gtin,string cst, string ncm, bool ativo)
+        private Produto produto;
+        public frmCadPro(int id, string descricao, decimal VlrVenda, decimal VlrCusto, decimal VlrCompra, string Gtin, string Cst, string Ncm, bool Ativo)
         {
+            bool ativo;
+            ativo = Ativo;
             InitializeComponent();
+            produto = new Produto
+            {
+                Id = id,
+                Descricao = descricao,
+                ValorVenda = VlrVenda,
+                ValorCusto = VlrCusto,
+                ValorCompra = VlrCompra,
+                GTIN = Gtin,
+                CST = Cst,
+                NCM = Ncm,
+                Ativo = ativo
+            };
 
-            txtCod.Text = id;
-            txtDescricao.Text = descricao;
-            txtValorVenda.Text= vlrvenda;
-            txtValorCompra.Text = vlrcompra;
-            txtValorCusto.Text = vlrcusto;
-            txtGtin.Text = gtin;
-            txtNcm.Text = ncm;
-            txtCst.Text =cst ;
-            var Ativo = ativo;
+            // Exibir informações do produto nos controles do formulário
+            
+            
+            txtCod.Text = produto.Id.ToString();
+            txtDescricao.Text = produto.Descricao;
+            txtValorVenda.Text = produto.ValorVenda.ToString();
+            txtValorCusto.Text = produto.ValorCusto.ToString();
+            txtValorCompra.Text = produto.ValorCompra.ToString();
+            txtGtin.Text = produto.GTIN;
+            txtCst.Text = produto.CST;
+            txtNcm.Text = produto.NCM;
+            Ativo = ativo;
 
 
             if (Ativo == false) { btnRestaurar.Enabled = true; btnRestaurar.Visible = true; btnExcluir.Enabled = false; btnExcluir.Visible = false; }
-            else { btnRestaurar.Enabled = false; btnRestaurar.Visible = false; btnExcluir.Enabled = true; btnExcluir.Visible = true;  }
+            else { btnRestaurar.Enabled = false; btnRestaurar.Visible = false; btnExcluir.Enabled = true; btnExcluir.Visible = true; }
         }
         public frmCadPro()
         {
@@ -41,37 +51,66 @@ namespace ProjetoSistema.Views
 
         private void btnGravar_Click(object sender, EventArgs e)
         {
-            
+
             try
             {
-
-                string Descricao = txtDescricao.Text;
-                decimal VlrVenda = decimal.Parse(txtValorVenda.Text.TrocarPontoPorVirgula());
-                decimal VlrCompra = decimal.Parse(txtValorCompra.Text.TrocarPontoPorVirgula());
-                decimal VlrCusto = decimal.Parse(txtValorCusto.Text.TrocarPontoPorVirgula());
-                string Cst = txtCst.Text;
-                string Ncm = txtNcm.Text;
-                string Gtin = txtGtin.Text;
-
-                using (SqlConnection cn = new SqlConnection(Conn.StrCon))
+                if (txtCod.Text.Length < 1)
                 {
-                    cn.Open();
-                    var Sql = "INSERT INTO CADPRO (DESCRICAO,VLRVENDA,VLRCOMPRA,VLRCUSTO,CST,NCM,GTIN,ATIVO) VALUES (@Descricao,@VlrVenda,@VlrCompra,@VlrCusto,@Cst,@Ncm,@Gtin,'1')";
+                    string Descricao = txtDescricao.Text;
+                    decimal VlrVenda = decimal.Parse(txtValorVenda.Text.TrocarPontoPorVirgula());
+                    decimal VlrCompra = decimal.Parse(txtValorCompra.Text.TrocarPontoPorVirgula());
+                    decimal VlrCusto = decimal.Parse(txtValorCusto.Text.TrocarPontoPorVirgula());
+                    string Cst = txtCst.Text;
+                    string Ncm = txtNcm.Text;
+                    string Gtin = txtGtin.Text;
 
-                    using (SqlCommand Add = new SqlCommand(Sql, cn))
+                    using (SqlConnection cn = new SqlConnection(Conn.StrCon))
                     {
-                        
-                        Add.Parameters.AddWithValue("@Descricao", Descricao);
-                        Add.Parameters.AddWithValue("@VlrVenda", VlrVenda);
-                        Add.Parameters.AddWithValue("@VlrCompra", VlrCompra);
-                        Add.Parameters.AddWithValue("@VlrCusto", VlrCusto);
-                        Add.Parameters.AddWithValue("@Cst", Cst);
-                        Add.Parameters.AddWithValue("@Ncm", Ncm);
-                        Add.Parameters.AddWithValue("@Gtin", Gtin);
+                        cn.Open();
+                        var Sql = "INSERT INTO CADPRO (DESCRICAO,VLRVENDA,VLRCOMPRA,VLRCUSTO,CST,NCM,GTIN,ATIVO) VALUES (@Descricao,@VlrVenda,@VlrCompra,@VlrCusto,@Cst,@Ncm,@Gtin,'1')";
 
-                        Add.ExecuteNonQuery();
-                        MessageBox.Show("Produto cadastrado com sucesso");
+                        using (SqlCommand Add = new SqlCommand(Sql, cn))
+                        {
 
+                            Add.Parameters.AddWithValue("@Descricao", Descricao);
+                            Add.Parameters.AddWithValue("@VlrVenda", VlrVenda);
+                            Add.Parameters.AddWithValue("@VlrCompra", VlrCompra);
+                            Add.Parameters.AddWithValue("@VlrCusto", VlrCusto);
+                            Add.Parameters.AddWithValue("@Cst", Cst);
+                            Add.Parameters.AddWithValue("@Ncm", Ncm);
+                            Add.Parameters.AddWithValue("@Gtin", Gtin);
+
+                            Add.ExecuteNonQuery();
+                            MessageBox.Show("Produto cadastrado com sucesso");
+
+                            txtDescricao.Text = "";
+                            txtValorVenda.Text = "";
+                            txtValorCusto.Text = "";
+                            txtValorCompra.Text = "";
+                            txtGtin.Text = "";
+                            txtNcm.Text = "";
+                            txtCst.Text = "";
+
+                        }
+                    }
+                }
+                else
+                {
+                    if (produto.Ativo == false)
+                    {
+                        MessageBox.Show("Não é possivel modificar produtos inativos.");
+                    }
+                    else
+                    {
+                        AttCadastros.UpdateCadastro("CADPRO", "DESCRICAO", txtDescricao.Text, "ID", txtCod.Text);
+                        AttCadastros.UpdateCadastro("CADPRO", "VlrVenda", txtValorVenda.Text.TrocarVirgulaPorPonto(), "ID", txtCod.Text);
+                        AttCadastros.UpdateCadastro("CADPRO", "VlrCusto", txtValorCusto.Text.TrocarVirgulaPorPonto(), "ID", txtCod.Text);
+                        AttCadastros.UpdateCadastro("CADPRO", "VlrCompra", txtValorCompra.Text.TrocarVirgulaPorPonto(), "ID", txtCod.Text);
+                        AttCadastros.UpdateCadastro("CADPRO", "GTIN", txtGtin.Text, "ID", txtCod.Text);
+                        AttCadastros.UpdateCadastro("CADPRO", "Cst", txtCst.Text, "ID", txtCod.Text);
+                        AttCadastros.UpdateCadastro("CADPRO", "Ncm", txtNcm.Text, "ID", txtCod.Text);
+
+                        MessageBox.Show("Produto atualizado com sucesso");
                         txtDescricao.Text = "";
                         txtValorVenda.Text = "";
                         txtValorCusto.Text = "";
@@ -79,7 +118,7 @@ namespace ProjetoSistema.Views
                         txtGtin.Text = "";
                         txtNcm.Text = "";
                         txtCst.Text = "";
-
+                        txtCod.Text = "";
                     }
                 }
             }
@@ -91,6 +130,7 @@ namespace ProjetoSistema.Views
 
         private void btnNovo_Click(object sender, EventArgs e)
         {
+            txtCod.Text = "";
             txtDescricao.Text = "";
             txtValorVenda.Text = "";
             txtValorCusto.Text = "";
@@ -124,30 +164,44 @@ namespace ProjetoSistema.Views
         {
             AttCadastros.ExcluirEntidade("CADPRO", txtCod);
             btnRestaurar.Enabled = true; btnRestaurar.Visible = true; btnExcluir.Enabled = false; btnExcluir.Visible = false;
+
+            produto.Ativo = false;
         }
 
         private void btnRestaurar_Click(object sender, EventArgs e)
         {
             AttCadastros.RestaurarEntidade("CADPRO", txtCod);
             btnRestaurar.Enabled = false; btnRestaurar.Visible = false; btnExcluir.Enabled = true; btnExcluir.Visible = true;
+
+            produto.Ativo = true;
         }
 
         private void txtValorVenda_KeyPress(object sender, KeyPressEventArgs e)
         {
-            txtValorVenda.Text.TrocarPontoPorVirgula();
-            txtValorVenda.Text.SoNumero(txtValorVenda, e);
+            txtValorVenda.Text.TrocarVirgulaPorPonto();
+            txtValorVenda.Text.SoNumeroComPontoEVirgula(txtValorVenda, e);
         }
 
         private void txtValorCompra_KeyPress(object sender, KeyPressEventArgs e)
         {
-            txtValorCompra.Text.TrocarPontoPorVirgula();
-            txtValorCompra.Text.SoNumero(txtValorCompra, e);
+            txtValorCompra.Text.TrocarVirgulaPorPonto();
+            txtValorCompra.Text.SoNumeroComPontoEVirgula(txtValorCompra, e);
         }
 
         private void txtValorCusto_KeyPress(object sender, KeyPressEventArgs e)
         {
-            txtValorCusto.Text.TrocarPontoPorVirgula();
-            txtValorCusto.Text.SoNumero(txtValorCusto, e);
+            txtValorCusto.Text.TrocarVirgulaPorPonto();
+            txtValorCusto.Text.SoNumeroComPontoEVirgula(txtValorCusto, e);
+        }
+
+        private void txtNcm_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            txtNcm.Text.SoNumero(txtNcm, e);
+        }
+
+        private void txtCst_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            txtCst.Text.SoNumero(txtCst, e);
         }
     }
 }

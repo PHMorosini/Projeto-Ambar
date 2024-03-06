@@ -368,6 +368,7 @@ namespace ProjetoSistema.Views
             this.txtCst.Name = "txtCst";
             this.txtCst.Size = new System.Drawing.Size(132, 20);
             this.txtCst.TabIndex = 3;
+            this.txtCst.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCst_KeyPress);
             // 
             // label8
             // 
@@ -388,6 +389,7 @@ namespace ProjetoSistema.Views
             this.txtNcm.Name = "txtNcm";
             this.txtNcm.Size = new System.Drawing.Size(132, 20);
             this.txtNcm.TabIndex = 1;
+            this.txtNcm.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNcm_KeyPress);
             // 
             // label9
             // 

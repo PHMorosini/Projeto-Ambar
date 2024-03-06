@@ -10,13 +10,13 @@ namespace ProjetoSistema.Entities
     {
         public int Id { get; set; }
         public string Descricao { get; set; }
-        public decimal VlrVenda { get; set; }
+        public decimal ValorVenda { get; set; }
 
-        public decimal VlrCusto { get; set; }
-        public decimal VlrCompra { get; set; }
+        public decimal ValorCusto { get; set; }
+        public decimal ValorCompra { get; set; }
         public string GTIN { get; set; }
-        public string Cst {  get; set; }
-        public  string Ncm { get; set; }
+        public string CST{  get; set; }
+        public  string NCM { get; set; }
         public bool Ativo {  get; set; }
     }
 

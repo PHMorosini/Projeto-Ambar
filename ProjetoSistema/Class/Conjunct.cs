@@ -26,6 +26,11 @@ namespace ProjetoSistema.Class
             return value.Replace(".", ",");
         }
 
+        public static string TrocarVirgulaPorPonto(this string value)
+        {
+            return value.Replace(",", ".");
+        }
+
         public static string ObservadorParaMaiusculo(this string value, TextBox textBox)
         {
             textBox.Text = value.ToUpper();
@@ -48,6 +53,36 @@ namespace ProjetoSistema.Class
             }
         }
 
+        public static void SoNumeroComPontoEVirgula(this string value, TextBox textBox, KeyPressEventArgs e)
+        {
+            try
+            {
+                if ((!char.IsDigit(e.KeyChar) && e.KeyChar != ',' && e.KeyChar != '.' && !char.IsControl(e.KeyChar)))
+                {
+                    e.Handled = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Digite somente numeros{ex.Message}");
+            }
+        }
+
+        public static void SoNumeroComPontoEVirgula(this string value, MaskedTextBox textBox, KeyPressEventArgs e)
+        {
+            try
+            {
+                if ((!char.IsDigit(e.KeyChar) && e.KeyChar != ',' && e.KeyChar != '.' && !char.IsControl(e.KeyChar)))
+                {
+                    e.Handled = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Digite somente numeros{ex.Message}");
+            }
+        }
+
         public static void SoNumero(this string value, MaskedTextBox textBox, KeyPressEventArgs e)
         {
             try
@@ -63,6 +98,19 @@ namespace ProjetoSistema.Class
                 MessageBox.Show($"Digite somente numeros{ex.Message}");
             }
         }
+
+        public static decimal ToValidDecimal(this string valor)
+        {
+            valor = valor.Replace("R$", "").Replace("%", "").Replace("''", "");
+
+            if (decimal.TryParse(valor, NumberStyles.Any, CultureInfo.GetCultureInfo("pt-BR"), out var result))
+            {
+                return result;
+            }
+
+            return 0M;
+        }
+
     }
     public static class AttCadastros
     {
@@ -115,5 +163,28 @@ namespace ProjetoSistema.Class
             }
 
         }
+
+        public static void UpdateCadastro(string TableName,string ColumnName,string NewValue,string ColumnWhere,string ValorChecagem)
+        {
+            
+            try
+            {
+                var Update = $@"UPDATE {TableName} set {ColumnName} = '{NewValue}' where {ColumnWhere} = '{ValorChecagem}'";
+                using (SqlConnection cn = new SqlConnection(Conn.StrCon))
+                {
+                    cn.Open();
+                    SqlCommand Execute = new SqlCommand(Update, cn);
+                    Execute.ExecuteNonQuery();
+
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show($"Erro ao atualizar a entidade{ex.Message}");
+            }
+
+        }
+
+       
     }
 }

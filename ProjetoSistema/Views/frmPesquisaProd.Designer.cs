@@ -83,6 +83,7 @@
             this.txtCod.Size = new System.Drawing.Size(194, 32);
             this.txtCod.TabIndex = 2;
             this.txtCod.TextChanged += new System.EventHandler(this.txtCod_TextChanged);
+            this.txtCod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCod_KeyPress);
             // 
             // btnPesquisarProd
             // 

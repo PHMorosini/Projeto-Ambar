@@ -52,7 +52,7 @@ namespace ProjetoSistema.Views
 
         private void btnPesquisarDescri_Click(object sender, EventArgs e)
         {
-            Querry.PesquisarnaGrid(txtDescricao, dtgProdutos, "DESCRICAO");
+            Querry.PesquisarNaGrid(txtDescricao, dtgProdutos, "DESCRICAO");
         }
 
         private void txtDescricao_TextChanged(object sender, EventArgs e)
@@ -64,10 +64,23 @@ namespace ProjetoSistema.Views
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
-            frmCadPro cadPro = new frmCadPro(id,descricao,VlrVenda,VlrCusto,VlrCompra,Cst,Gtin,Ncm,Ativo);
+
+            frmCadPro cadPro = new frmCadPro
+                (
+              int.Parse(id),
+              descricao,
+              decimal.Parse(VlrVenda),
+              decimal.Parse(VlrCusto),
+              decimal.Parse(VlrCompra),
+              Gtin,
+              Cst,
+              Ncm,
+              Ativo
+                 ) ;
+
             cadPro.Show();
             this.Close();
-            
+
         }
 
         private void dtgProdutos_SelectionChanged(object sender, EventArgs e)
@@ -85,8 +98,24 @@ namespace ProjetoSistema.Views
                 Ncm = row.Cells[7].Value.ToString();
                 Ativo = bool.Parse( row.Cells[8].Value.ToString());
 
+                Produto produto = new Produto
+                {
+                    Id = int.Parse(id),
+                    Descricao = descricao,
+                    ValorVenda = decimal.Parse(VlrVenda),
+                    ValorCusto = decimal.Parse(VlrCusto),
+                    ValorCompra = decimal.Parse(VlrCompra),
+                    GTIN = Gtin,
+                    CST = Cst,
+                    NCM = Ncm,
+                    Ativo = Ativo
+                };
             }
         }
-        
+
+        private void txtCod_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            txtCod.Text.SoNumero(txtCod, e);
+        }
     }
 }

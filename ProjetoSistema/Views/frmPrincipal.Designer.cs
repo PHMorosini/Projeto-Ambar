@@ -61,6 +61,8 @@
             // 
             // button3
             // 
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(165)))), ((int)(((byte)(17)))));
             this.button3.BackgroundImage = global::ProjetoSistema.Properties.Resources.Botao_configurações;
             this.button3.Location = new System.Drawing.Point(0, 665);
